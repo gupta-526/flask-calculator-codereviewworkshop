@@ -28,7 +28,9 @@ def calculate():
     elif operation == "divide":
         result = float(number_one) / float(number_two)
         return render_template("calculator.html", result=result)
-
+    elif operation="modulo":
+        result = get_modulo(number_one, number_two)
+        return render_template("calculator.html", result)
     else:
         return render_template("calculator.html")
 
@@ -42,6 +44,9 @@ def not_found(error):
 def server_error(error):
     return render_template("500.html", error=error)
 
+def get_modulo(number_one, number_two):
+    r = float(number_one) % number_two
+    return r
 
 if __name__ == "__main__":
     keep_alive()
