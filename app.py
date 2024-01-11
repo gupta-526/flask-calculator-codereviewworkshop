@@ -43,5 +43,10 @@ def server_error(error):
     return render_template("500.html", error=error)
 
 
+@app.route("/health")
+    print("App is alive")
+    return render_template("udm.html")
+
+
 if __name__ == "__main__":
     keep_alive()
